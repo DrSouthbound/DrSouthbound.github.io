@@ -45,7 +45,6 @@
             height: 100%;
             background: var(--bg-color, rgb(87, 171, 255));
             z-index: -1;
-            transition: background 0.3s ease-in-out;
         }
         h1 {
             position: fixed;
@@ -163,28 +162,6 @@
             }
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var colors = ["rgb(87, 171, 255)", "rgb(105, 180, 255)", "rgb(120, 187, 255)"];
-            var numSections = colors.length;
-
-            function changeBackgroundColor() {
-                var scrollPosition = window.scrollY;
-                var totalHeight = document.body.scrollHeight - window.innerHeight;
-                var sectionHeight = totalHeight / numSections;
-                var sectionIndex = Math.min(numSections - 1, Math.floor(scrollPosition / sectionHeight));
-                
-                document.body.style.setProperty('--bg-color', colors[sectionIndex]);
-
-                var title = document.querySelector('h1');
-                title.style.top = 80 - scrollPosition * 0.5 + 'px';
-            }
-
-            window.addEventListener("scroll", function() {
-                changeBackgroundColor();
-            });
-    }   );
-    </script>
     <title>DrSouthbound</title>
 </head>
 <body>
