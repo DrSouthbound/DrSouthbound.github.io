@@ -135,10 +135,6 @@
         .secret-button:hover + .secret-text {
             opacity: 1;
         }
-
-        .spacer {
-            height: 3000px;
-        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -152,6 +148,9 @@
                 var sectionIndex = Math.min(numSections - 1, Math.floor(scrollPosition / sectionHeight));
                 
                 document.body.style.setProperty('--bg-color', colors[sectionIndex]);
+
+                var title = document.querySelector('h1');
+                title.style.top = 80 - scrollPosition * 0.5 + 'px';
             }
 
             window.addEventListener("scroll", function() {
@@ -189,7 +188,5 @@
 
     <button class="secret-button"></button>
     <div class="secret-text">I was here 11:11 PM EST, 11/19/2023</div>
-
-    <div class="spacer"></div>
 </body>
 </html>
