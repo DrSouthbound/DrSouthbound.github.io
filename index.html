@@ -106,21 +106,6 @@
             opacity: 1;
         }
 
-        .secret-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: rgb(255, 255, 255);
-            opacity: 0;
-            color: #ffffff;
-            border: none;
-            padding: 10px 20px;
-            font-family: "Oxygen-Regular";
-            font-size: 1em;
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-        }
-
-        
         @media only screen and (max-width: 700px) {
             h1 {
                 font-size: 10vw;
@@ -144,6 +129,11 @@
             .social-text {
                 position: fixed;
                 right: 1000%;
+            }
+
+            .social-icon-container:hover .social-icon {
+                transform: scale(1) !important;
+                opacity: .8;
             }
         }
     </style>
