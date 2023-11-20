@@ -4,6 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        @font-face {
+            font-family: 'Oxygen-Regular';
+            font-style: normal;
+            font-weight: normal;
+            src: local('Oxygen-Regular'), url('Oxygen-Regular.woff') format('woff');
+        }
+        @font-face {
+            font-family: 'Oxygen-Light';
+            font-style: normal;
+            font-weight: normal;
+            src: local('Oxygen-Light'), url('Oxygen-Light.woff') format('woff');
+        }
+        @font-face {
+            font-family: 'Oxygen-Bold';
+            font-style: normal;
+            font-weight: normal;
+            src: local('Oxygen-Bold'), url('Oxygen-Bold.woff') format('woff');
+        }
+        @font-face {
+            font-family: 'KdamThmorPro-Regular';
+            font-style: normal;
+            font-weight: normal;
+            src: local('KdamThmorPro-Regular'), url('KdamThmorPro-Regular.woff') format('woff');
+        }
+
         body {
             display: flex;
             flex-direction: column;
@@ -18,6 +43,7 @@
             color: rgb(255, 255, 255);
             font-size: 6em;
             margin-top: 15px;
+            font-family: "Oxygen-Bold";
         }
         h1::after {
             content: '';
