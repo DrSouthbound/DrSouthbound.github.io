@@ -43,10 +43,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgb(88, 150, 248);
+            background: var(--bg-color, rgb(87, 171, 255));
             z-index: -1;
+            transition: background 0.3s ease-in-out;
         }
-
         h1 {
             position: fixed;
             top: 80px;
@@ -135,7 +135,30 @@
         .secret-button:hover + .secret-text {
             opacity: 1;
         }
+
+        .spacer {
+            height: 3000px;
+        }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var colors = ["rgb(87, 171, 255)", "rgb(105, 180, 255)", "rgb(120, 187, 255)"];
+            var numSections = colors.length;
+
+            function changeBackgroundColor() {
+                var scrollPosition = window.scrollY;
+                var totalHeight = document.body.scrollHeight - window.innerHeight;
+                var sectionHeight = totalHeight / numSections;
+                var sectionIndex = Math.min(numSections - 1, Math.floor(scrollPosition / sectionHeight));
+                
+                document.body.style.setProperty('--bg-color', colors[sectionIndex]);
+            }
+
+            window.addEventListener("scroll", function() {
+                changeBackgroundColor();
+            });
+    }   );
+    </script>
     <title>DrSouthbound</title>
 </head>
 <body>
@@ -166,5 +189,7 @@
 
     <button class="secret-button"></button>
     <div class="secret-text">I was here 11:11 PM EST, 11/19/2023</div>
+
+    <div class="spacer"></div>
 </body>
 </html>
