@@ -34,6 +34,7 @@
             padding: 0;
             position: relative;
             font-family: "Oxygen-Regular";
+            background: linear-gradient(to bottom right, rgb(114, 201, 252), rgb(79, 190, 255));
         }
 
         body::before {
@@ -53,6 +54,16 @@
             margin: 0;
             font-family: "Oxygen-Regular";
             font-size: 5em;
+            color: rgb(255, 255, 255);
+        }
+
+        .end {
+            position: fixed;
+            top: 5px;
+            left: 10px;
+            margin: 0;
+            font-family: "Oxygen-Regular";
+            font-size: 1em;
             color: rgb(255, 255, 255);
         }
 
@@ -106,44 +117,88 @@
             opacity: 1;
         }
 
-        .image-section {
-            margin-top: 20px;
+        .project-container {
+            margin-top: 200px;
+            margin-left: 80px;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
             flex-wrap: wrap;
-            padding: 300px 120px;
+            justify-content: left;
         }
 
-        .image-container {
-            position: relative;
-            flex: 0 0 23%;
-            margin-bottom: 20px;
+        .project {
+            padding: 20px;
+            margin: 20px;
+            background-color: rgb(124, 207, 255);
+            border-radius: 10px;
+            transform-origin: left bottom;
+            min-width: 290px;
+            min-height: 350px;
+            flex-grow: 1;
+            flex-basis: calc(33.33% - 320px);
+            max-width: calc(33.33% - 320px);
+            box-sizing: border-box;
+
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            overflow: hidden;
         }
 
-        .image-container img {
-            width: 100%;
-            height: auto;
+
+        .project-name {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
         }
 
-        .image-text {
-            position: absolute;
-            bottom: 0;
+        .position {
+            color: white;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .date {
+            color: white;
+            font-size: 18px;
+        }
+
+        .description {
+            color: white;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .label {
+            color: white;
+            padding: 3px 6px;
+            border-radius: 3px;
+            margin-left: 70px;
+            font-size: 26px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .header-social-background {
+            position: fixed;
+            top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 10px;
-            box-sizing: border-box;
-            font-size: 14px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
+            height: 210px;
+            background: rgb(76, 189, 255);
+            z-index: 0;
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
-        .image-container:hover .image-text {
-            opacity: 1;
+        .header-social-section {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 10px;
         }
+
 
         @media only screen and (max-width: 700px) {
             h1 {
@@ -179,8 +234,8 @@
     <title>DrSouthbound</title>
 </head>
 <body>
+    <div class="header-social-background"></div>
     <h1>DrSouthbound</h1>
-
     <div class="social-section">
         <div class="social-icon-container">
             <a href="https://discord.com/users/330164372963983361/" target="_blank" rel="noopener noreferrer">
@@ -203,23 +258,27 @@
             </a>
         </div>
     </div>
-    <div class="image-section">
-        <div class="image-container">
-            <img src="image1.jpg" alt="Image 1">
-            <div class="image-text">March 2022 - A project I worked on with a friend, a 2D game compiled of robbing a house but not being able to fit anything outside. So you had to trade cards around to try and craft the items out of spare materials you found around the house like fabrics, tape, and spatulas to eventually make the object and win the round. This project unfortunently was not completed due to my friend who made all the images moving onto other projects.</div>
+    <div class="project-container">
+        <div class="project">
+            <a href="Gaburgle/"><div class="project-name">Gaburgle<span class="label">SOLO</span></div></a>
+            <div class="position">Lead Scripter</div>
+            <div class="date">March 2022</div>
+            <div class="description">A project I mostly worked on by myself except for the UI being designed by a friend, it was a 2D game about robbing houses and needing to trade cards and make makeshift items as the real ones were to big to fit out the door</div>
         </div>
-        <div class="image-container">
-            <img src="image2.jpg" alt="Image 2">
-            <div class="image-text">Jan 2023-Mar 2023 - With this project I made a full interaction system including an inventory, building system, NPC system, justice system including cuffing, grabbing, citing, and booking to arrest a suspect. The project took around one month to complete as it was on and off and it showed me a lot about how to properly use modulescripts to modularize a system with welds and tools with the custom tool system and radial menus for stats.</div>
+        <div class="project">
+            <a href="InteractionSystem/"><div class="project-name">Interaction<span class="label">SOLO</span></div></a>
+            <div class="position">Lead Scripter</div>
+            <div class="date">Jan 2023-March 2023</div>
+            <div class="description">With this project I made a whole interaction system from scratch which involves a lot of OOP in order to help with the making and the easy access to create new interactions swiftly.</div>
         </div>
-        <div class="image-container">
-            <img src="image3.jpg" alt="Image 3">
-            <div class="image-text">Jan 2023-Mar 2023 - With more into the interaction system, the building system as shown was able to get a player to place down wood, concrete, and bricks on a preset area for a roleplay game. The progress made by player(s) would save across servers and upon completion of the project would result in the finished project being put into the game automatically. This could help player roleplays with construction companys, it also displays the radio and how it would alert people if their name was said.</div>
-        </div>
-        <div class="image-container">
-            <img src="image4.jpg" alt="Image 4">
-            <div class="image-text">Late 2023 - This project was a snow system I made, it comprised of a large snow mesh full of bones in order to make a walkable snow deformation system, whenever a player stepped on the snow it would shrink down as to resemble it being squished. There was a shovel tool that could get rid of large quantities of snow as it wouldn't squish down if it was to high, and there was a system inplace to get rid of snow if it were to interfere with a building.</div>
+        <div class="project">
+            <a href="SnowSystem/"><div class="project-name">Snow<span class="label">SOLO</span></div></a>
+            <div class="position">Lead Scripter</div>
+            <div class="date">Late 2023</div>
+            <div class="description">I made a snow system which is a large mesh full of bones to make it so when you walk near a bone it retracts down to simulate the pressing down of snow similar to games like RDR2.</div>
         </div>
     </div>
+
+    <div class="end">Click on the project name to view pictures, in case you need pictures of code please feel free to DM me on discord!</div>
 </body>
 </html>
