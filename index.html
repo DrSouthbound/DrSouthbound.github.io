@@ -106,6 +106,45 @@
             opacity: 1;
         }
 
+        .image-section {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 300px 120px;
+        }
+
+        .image-container {
+            position: relative;
+            flex: 0 0 23%;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .image-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .image-container:hover .image-text {
+            opacity: 1;
+        }
+
         @media only screen and (max-width: 700px) {
             h1 {
                 font-size: 10vw;
@@ -162,6 +201,24 @@
                 <img class="social-icon" src="github.png" alt="Github">
                 <div class="social-text">DrSouthbound</div>
             </a>
+        </div>
+    </div>
+    <div class="image-section">
+        <div class="image-container">
+            <img src="image1.jpg" alt="Image 1">
+            <div class="image-text">A project I worked on with a friend, a 2D game compiled of robbing a house but not being able to fit anything outside. So you had to trade cards around to try and craft the items out of spare materials you found around the house like fabrics, tape, and spatulas to eventually make the object and win the round. This project unfortunently was not completed due to my friend who made all the images moving onto other projects.</div>
+        </div>
+        <div class="image-container">
+            <img src="image2.jpg" alt="Image 2">
+            <div class="image-text">With this project I made a full interaction system including an inventory, building system, NPC system, justice system including cuffing, grabbing, citing, and booking to arrest a suspect. The project took around one month to complete as it was on and off and it showed me a lot about how to properly use modulescripts to modularize a system with welds and tools with the custom tool system and radial menus for stats.</div>
+        </div>
+        <div class="image-container">
+            <img src="image3.jpg" alt="Image 3">
+            <div class="image-text">With more into the interaction system, the building system as shown was able to get a player to place down wood, concrete, and bricks on a preset area for a roleplay game. The progress made by player(s) would save across servers and upon completion of the project would result in the finished project being put into the game automatically. This could help player roleplays with construction companys, it also displays the radio and how it would alert people if their name was said.</div>
+        </div>
+        <div class="image-container">
+            <img src="image4.jpg" alt="Image 4">
+            <div class="image-text">This project was a snow system I made, it comprised of a large snow mesh full of bones in order to make a walkable snow deformation system, whenever a player stepped on the snow it would shrink down as to resemble it being squished. There was a shovel tool that could get rid of large quantities of snow as it wouldn't squish down if it was to high, and there was a system inplace to get rid of snow if it were to interfere with a building.</div>
         </div>
     </div>
 </body>
